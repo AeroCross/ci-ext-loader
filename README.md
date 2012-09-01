@@ -1,5 +1,3 @@
-Adds a method for loading and instatiating presenter classes by using Codeigniter's native load() method.
-
 ## What is it?
 
 By using **Presenters**, you'll be using logic (call methods, helpers, loops, etc.) to output HTML to you views. By using this loader, you can store all your presenters in a folder and easily load them and use them in your controllers and views.
@@ -28,8 +26,13 @@ And you'll be naming your classes:
 		}
 	}
 
+- Use a lowercased name as a script name.
+- Use the same name, but with a uppercased initial and suffix "Presenter" as your class name
+
 ### Loading presenters
 
 In your controllers, you can just call `$this->load->presenter('name')` and the presenter will be available as an object in `$this->presenter->name->create($param)`, inside your controllers and views.
 
-Unlike a normal load(), the presenters are **namespaced** — that means that every presenter is inside the $this->presenter object. You can use any names you've used before in your models or libraries without any name collision.
+Unlike a normal load(), the presenters are **namespaced** — that means that every presenter is inside the `$this->presenter` object. You can use any names you've used before in your models or libraries without any name collision.
+
+The pattern would be: `$this->presenter->$name->$method($parameters)`.
