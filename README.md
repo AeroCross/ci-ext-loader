@@ -20,11 +20,13 @@ Inside you can create an unlimited number of presenters. The naming pattern is:
 
 And you'll be naming your classes:
 
+```php
 	class NamePresenter {
 		public class create($param) {
 		
 		}
 	}
+```
 
 - Use a lowercased name as a script name.
 - Use the same name, but with a uppercased initial and suffix "Presenter" as your class name
